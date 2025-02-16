@@ -23,7 +23,13 @@ from app.blueprints.dashboard.bp_dashboard import dashboard, addDataDashboard
 
 app = Flask(__name__, instance_relative_config=True)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///selaawi.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://selaawiApi_owner:5CBdzsu6GUFQ@ep-cool-glade-a1mq5iww.ap-southeast-1.aws.neon.tech/selaawiApi?sslmode=require'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://selaawiApi_owner:5CBdzsu6GUFQ@ep-cool-glade-a1mq5iww.ap-southeast-1.aws.neon.tech/selaawiApi?sslmode=require'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{dbuser}:{dbpass}@{dbhost}/{dbname}'.format(
+    dbuser = 'sahabatPohon', 
+    dbpass = 'Alim123!', 
+    dbhost = 'selaawi-data-otomatis.postgres.database.azure.com', 
+    dbname = 'data_otomatis'
+)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # db = SQLAlchemy(app)

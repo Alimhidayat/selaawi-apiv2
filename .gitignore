@@ -5,3 +5,6 @@ __pycache__/
 # instance directory
 instance/
 .vercel
+# script directory
+script/
+errors.log
